@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
-    "test:ui": "npx playwright test tests/ui",
-    "test:api": "npx playwright test tests/api"
+    "test:ui": "npx playwright test --config=config/ui.config.js",
+    "test:api": "npx playwright test --config=config/api.config.js"
   },
   "keywords": [],
   "author": "",

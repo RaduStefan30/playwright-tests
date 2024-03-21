@@ -1,0 +1,15 @@
+import { devices } from '@playwright/test';
+
+export const baseConfig = {
+  timeout: 10000,
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 1 : undefined,
+  reporter: 'html',
+  projects: [
+    {
+      name: 'Chromium',
+      use: { ...devices['Desktop Chrome'] },
+    },
+  ],
+};
