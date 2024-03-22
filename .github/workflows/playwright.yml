@@ -28,9 +28,9 @@ jobs:
       - name: Install Browsers
         run: npx playwright install --with-deps
       - name: Run API tests
-        run: npx playwright test tests/api
+        run: npx playwright test --config=config/api.config.js
       - name: Run UI tests
-        run: npx playwright test tests/ui
+        run: npx playwright test --config=config/ui.config.js
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
