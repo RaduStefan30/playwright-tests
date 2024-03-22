@@ -29,6 +29,6 @@ test.describe('Cart Functionality Tests', () => {
         await cartPage.removeItemFromCart();
 
         // Check that the item was removed by validating the empty cart message
-        expect(cartPage.emptyCartMessage).toHaveText(emptyCart)
+        await expect(cartPage.emptyCartMessage).toHaveText(emptyCart);
     });
 });
