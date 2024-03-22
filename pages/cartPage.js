@@ -25,7 +25,8 @@ export default class CartPage {
     }
 
     async addItemToCart() {
-        await this.addToCartButton.waitFor({ state: 'visible' });
+        // temp workaround for the animation
+        await this.page.waitForTimeout(1000);
         await this.addToCartButton.click();
     }
 

@@ -5,7 +5,9 @@ import { generateRandomUser } from '../../utils/userUtils';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('');
-  await this.hoverMyAccount();
+
+  const loginPage = new LoginPage(page);
+  await loginPage.hoverMyAccount();
 });
 
 test.describe('User Login Tests', () => {
