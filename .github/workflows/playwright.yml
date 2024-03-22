@@ -30,12 +30,18 @@ jobs:
       - name: Install Browsers
         run: npx playwright install --with-deps
       - name: Run API tests
-        run: npx playwright test --config=config/api.config.js
+        run: npx playwright test --config=config/api.config.js --output=playwright-report/api
       - name: Run UI tests
-        run: npx playwright test --config=config/ui.config.js
+        run: npx playwright test --config=config/ui.config.js --output=playwright-report/ui
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: playwright-report
-          path: playwright-report/
+          name: playwright-api-report
+          path: playwright-report/api/
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-ui-report
+          path: playwright-report/ui/
           retention-days: 30
