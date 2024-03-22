@@ -22,10 +22,10 @@ export default class CartPage {
 
     async hoverOverProduct() {
         await this.productCard.hover();
-        await this.addToCartButton.waitFor({ state: 'visible' });
     }
 
     async addItemToCart() {
+        await this.addToCartButton.waitFor({ state: 'visible' });
         await this.addToCartButton.click();
     }
 
