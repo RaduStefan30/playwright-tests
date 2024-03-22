@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../../pages/loginPage';
+import LoginPage from '../../pages/loginPage';
 import { loginError } from '../../fixtures/messageConstants';
 
 test.beforeEach(async ({ page }) => {

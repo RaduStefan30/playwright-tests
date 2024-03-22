@@ -1,4 +1,4 @@
-class LoginPage {
+export default class LoginPage {
     constructor(page) {
         this.page = page;
         this.myAccountButton = page.locator('.nav-item.dropdown:last-child');
@@ -34,5 +34,3 @@ class LoginPage {
         await this.submitLogin();
     }
 }
-
-module.exports = { LoginPage };

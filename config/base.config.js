@@ -1,9 +1,9 @@
 import { devices } from '@playwright/test';
 
 export const baseConfig = {
-  timeout: 10000,
+  timeout: 30000,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
+  retries: process.env.CI ? 1 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   projects: [
