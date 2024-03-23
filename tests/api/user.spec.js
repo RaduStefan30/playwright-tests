@@ -40,6 +40,22 @@ test.describe('User API Tests', () => {
     expect(responseBody.message).toMatch(/logged in user session:\d+/);
   });
 
+  test('Create a user using post', async ({ request }) => {
+    // This should be reversed with the get request, but the API is configured this way
+    const response = await request.post(`user/login`, {
+      params: {
+        username: userData.username,
+        password: userData.password,
+      }
+    });
+    expect(response.status()).toBe(405);
+  });
+
+  test('Update a user without sending anything in the body', async ({ request }) => {
+    const response = await request.put(`user/${userData.username}`);
+    expect(response.status()).toBe(415);
+  });
+
   test('Delete the user', async ({ request }) => {
     const response = await request.delete(`user/${userData.username}`);
     const responseBody = await response.json();
