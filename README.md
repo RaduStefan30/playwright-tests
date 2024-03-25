@@ -1,4 +1,4 @@
-# Playwright Testing Project
+## Playwright Testing Project
 
 This project is designed to conduct both UI and API testing using Playwright, a powerful tool for automated testing across all modern browsers. It includes a suite of tests that can be easily extended to cover more scenarios and functionalities.
 
@@ -53,9 +53,19 @@ You can run the tests using npm scripts defined in `package.json`. Here's how:
    ```
    Use this command to run only the UI test suite.
 
-### Additional Information
+### Project Structure and Workflows
 
-- **Test Organization:** The tests are organized into `tests/ui` and `tests/api` directories for UI and API testing, respectively.
+- **Page Object Model (POM):** The project adopts the POM, which encapsulates pages or components in class methods. This reduces code duplication and increases maintainability.
+
+- **Automated Test Runs:** Tests are configured to run automatically every night and on every push to the repository, ensuring continuous integration and delivery.
+
+### Test Documentation and Bug Tracking
+
+- **Test Flows and Cases:** The `TestFlows.md` file documents the specific flows tested, as well as the actual test cases, providing a clear overview of the coverage.
+
+- **Bug Tracking:** The `Bugs.md` file lists known issues found during testing with the framework on the example apps tested.
+
+### Additional Information
 
 - **Test Reporting:** After test execution, reports are generated in the `playwright-report` directory. You can view a detailed HTML report by opening `playwright-report/index.html` in a browser.
 
